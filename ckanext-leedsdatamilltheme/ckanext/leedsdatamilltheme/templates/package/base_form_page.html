@@ -1,0 +1,39 @@
+{% extends "package/base.html" %}
+
+
+{% block sub_heading_content %}
+  <h3>Upload<span class="highlight">your data</span></h3>
+  <p>We’re powered by data, and the more interesting and useful data we can bring together, the greater the potential to change for the better the lives of everyone in Leeds.
+	 If you or your organisation have data to share, which others might find interesting, get in touch. We do all the hard work for you so getting involved couldn’t be easier.</p>
+
+{% endblock %}
+
+{% block primary_content %}
+  <section class="module">
+    <div class="module-content">
+      {% block form %}{{ c.form | safe }}{% endblock %}
+    </div>
+  </section>
+{% endblock %}
+
+{% block secondary_content %}
+  {% block info_module %}
+    <section class="module module-narrow module-shallow">
+      <h2 class="module-heading"><i class="icon-info-sign"></i> {{ _('What are datasets?') }}</h2>
+      <div class="module-content">
+        <p>
+          {% trans %}
+          Datasets are simply used to group related pieces of data. These
+          can then be found under a single url with a description and
+          licensing information.
+          {% endtrans %}
+        </p>
+      </div>
+    </section>
+  {% endblock %}
+
+  {% block resources_module %}
+    {# TODO: Pass in a list of previously created resources and the current package dict #}
+    {% snippet "package/snippets/resources.html", pkg={}, action='new_resource' %}
+  {% endblock %}
+{% endblock %}

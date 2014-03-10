@@ -1,0 +1,5 @@
+
+        [ckan.plugins]
+	# Add plugins here, eg
+	leedsdatamilltheme=ckanext.leedsdatamilltheme.plugin:LeedsDataMillThemePlugin
+	

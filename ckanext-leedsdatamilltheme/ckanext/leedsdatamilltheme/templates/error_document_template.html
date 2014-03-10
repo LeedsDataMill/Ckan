@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+
+{% block bodytag %} class="error-page" {% endblock %}
+{% block subtitle %}{{ gettext('Error %(error_code)s', error_code=c.code[0]) }}{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {# {{ c.content }} #}
+      <h2>Leeds Data Mill</h2>
+      <h2>404</h2>
+	  <h3>Ooo eck, that's not right is it. Please go back to the <a href="/">homepage</a> to get yourself back on track</h3>
+    </div>
+  </article>
+{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block flash %}
+  {# eat the flash messages caused by the 404 #}
+  {% set flash_messages = h.flash.pop_messages() %}
+{% endblock %}
+
+{% block secondary %}{% endblock %}
